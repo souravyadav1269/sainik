@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Salinaka - static ecommerce store">
+<title>Salinaka - Ecommerce Store</title>
+<link rel="icon" type="image/png" href="assets/logo-wordmark.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navigation" id="navigation">
+  <a class="logo" href="#home"><img src="assets/logo-full.png" alt="Salinaka"></a>
+  <nav class="main-nav">
+    <a href="#home">Home</a><a href="#shop">Shop</a><a href="#featured">Featured</a><a href="#recommended">Recommended</a>
+  </nav>
+  <div class="nav-actions">
+    <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search products"></label>
+    <button class="icon-btn" id="cartBtn" aria-label="Cart">🛒<b id="cartCount">0</b></button>
+    <button class="btn small" id="signupBtn">Sign Up</button>
+    <button class="btn small muted" id="signinBtn">Sign In</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <h1><strong>See</strong> everything with <strong>Clarity</strong></h1>
+    <p>Buying eyewear should leave you happy and good-looking, with money in your pocket. Glasses, sunglasses, and contacts—we’ve got your eyes covered.</p>
+    <a class="btn" href="#shop">Shop Now <span>→</span></a>
+  </div>
+  <div class="hero-image"><img src="assets/banner-girl.png" alt="Eyewear model"></div>
+</section>
+
+<section class="display" id="featured">
+  <div class="section-head"><h2>Featured Products</h2><a href="#shop" data-filter="featured">See All</a></div>
+  <div class="products" id="featuredProducts"></div>
+</section>
+
+<section class="display" id="recommended">
+  <div class="section-head"><h2>Recommended Products</h2><a href="#shop" data-filter="recommended">See All</a></div>
+  <div class="products" id="recommendedProducts"></div>
+</section>
+
+<section class="shop display" id="shop">
+  <div class="section-head"><h2>Shop</h2><button class="btn small muted" id="clearSearch">Clear filters</button></div>
+  <div class="shop-tools">
+    <select id="sortSelect"><option value="default">Sort by</option><option value="price-asc">Price Low - High</option><option value="price-desc">Price High - Low</option></select>
+  </div>
+  <div class="products" id="shopProducts"></div>
+</section>
+</main>
+
+<footer>
+  <div><img src="assets/logo-full.png" alt="Salinaka"></div>
+  <p>© 2026 Salinaka. Static HTML/CSS/JavaScript edition.</p>
+</footer>
+
+<div class="drawer" id="cartDrawer">
+  <div class="drawer-card"><div class="drawer-head"><h2>Your Basket</h2><button class="close" data-close="cartDrawer">×</button></div><div id="cartItems"></div><div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div><button class="btn full" id="checkoutBtn">Checkout</button></div>
+</div>
+
+<div class="modal" id="authModal">
+  <div class="modal-card"><button class="close" data-close="authModal">×</button><h2 id="authTitle">Sign In</h2><input type="email" placeholder="Email"><input type="password" placeholder="Password"><button class="btn full" id="authSubmit">Sign In</button><p class="switch-auth" id="switchAuth">Create an account</p></div>
+</div>
+
+<div class="modal" id="productModal">
+  <div class="modal-card product-modal"><button class="close" data-close="productModal">×</button><img id="modalImage" src="" alt=""><div><h2 id="modalName"></h2><p id="modalBrand"></p><h3 id="modalPrice"></h3><p>Quality eyewear designed for comfort and everyday style.</p><button class="btn" id="modalAdd">Add to basket</button></div></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
